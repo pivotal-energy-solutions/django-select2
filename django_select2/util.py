@@ -266,8 +266,8 @@ def register_field(key, field):
         __field_store[key] = id_
         __id_store[id_] = field
 
-        #if logger.isEnabledFor(logging.INFO):
-        print("Registering new field: %s; With actual id: %s; based on: %s" % (key, id_, SECRET_SALT))
+        if logger.isEnabledFor(logging.INFO):
+            logger.info("Registering new field: %s; With actual id: %s; based on: %s" % (key, id_, SECRET_SALT))
 
         if ENABLE_MULTI_PROCESS_SUPPORT:
             logger.info("Multi process support is enabled. Adding id-key mapping to remote server.")
